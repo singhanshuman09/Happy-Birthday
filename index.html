@@ -37,13 +37,15 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
+            overflow-y: auto;
         }
 
         .step {
             position: absolute;
             width: 100%;
             max-width: 800px;
-            padding: 40px;
+            max-height: 90vh;
+            padding: 40px 20px;
             background: rgba(255, 255, 255, 0.509);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -53,6 +55,7 @@
             transform: translateY(20px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             pointer-events: none;
+            overflow-y: auto;
         }
 
         .step.active {
@@ -70,6 +73,7 @@
             font-weight: 600;
             cursor: pointer;
             margin-top: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
             transition: all 0.3s ease;
         }
@@ -164,6 +168,36 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+        }
+
+        /* Mobile specific fixes */
+        @media (max-width: 768px) {
+            .step {
+                padding: 30px 15px;
+                max-height: 85vh;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            .emoji {
+                font-size: 2.5rem;
+            }
+
+            .reason-card {
+                margin: 8px 0;
+                padding: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
